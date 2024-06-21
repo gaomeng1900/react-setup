@@ -8,15 +8,14 @@ module.exports = {
 		'plugin:react-hooks/recommended',
 		'plugin:react/recommended',
 		'plugin:react/jsx-runtime',
+		'prettier', // must be last
 	],
 	ignorePatterns: ['dist', '.eslintrc.cjs'],
 	parser: '@typescript-eslint/parser',
 	plugins: ['react-refresh'],
 	rules: {
-		'react-refresh/only-export-components': [
-			'warn',
-			{ allowConstantExport: true },
-		],
+		'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+		'@typescript-eslint/no-explicit-any': 'warn',
 	},
 	parserOptions: {
 		ecmaVersion: 'latest',
