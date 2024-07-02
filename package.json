@@ -16,6 +16,10 @@
       "npx eslint"
     ]
   },
+  "engines" : { 
+    "npm" : ">=8.0.0",
+    "node" : ">=16.0.0"
+  },
   "dependencies": {
     "chalk": "^5.3.0",
     "classnames": "^2.5.1",
