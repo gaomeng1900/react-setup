@@ -17,10 +17,19 @@ export default defineConfig({
 				// 在 dev 环境中开启
 				enabled: true,
 			},
-			workbox: {},
+			workbox: {
+				skipWaiting: true,
+				clientsClaim: true,
+				cleanupOutdatedCaches: true,
+			},
 		}),
 	],
 	css: {
 		postcss: { plugins: [autoprefixer({})] },
+	},
+	resolve: {
+		alias: {
+			'@': '/src',
+		},
 	},
 })
