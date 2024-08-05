@@ -1,0 +1,112 @@
+.wrapper {
+	position: relative;
+
+	width: 200px;
+	transition: width 0.2s;
+
+	&.collapsed {
+		width: 50px;
+	}
+}
+
+.nav {
+	padding: 16px 0;
+
+	ul {
+		all: unset;
+
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+
+		a {
+			all: unset;
+			display: contents;
+		}
+
+		.menuItem {
+			all: unset;
+
+			display: flex;
+			align-items: center;
+
+			height: 40px;
+			padding: 0 16px;
+			gap: 16px;
+
+			cursor: pointer;
+
+			font-size: 14px;
+			color: rgba(0, 0, 0, 0.85);
+
+			&:hover {
+				background: rgba(21, 84, 171, 0.192);
+			}
+
+			&.disabled {
+				cursor: not-allowed;
+			}
+
+			.active & {
+				color: #305dff;
+
+				background: rgba(255, 100, 22, 0.08);
+			}
+			.disabled & {
+				pointer-events: none;
+			}
+
+			.iconWrapper {
+				width: 18px;
+				height: 18px;
+				font-size: 18px;
+				line-height: 18px;
+			}
+
+			.labelWrapper {
+				/* 超出 ... */
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+
+				.collapsed & {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.collapseButton {
+	all: unset;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+
+	position: absolute;
+	z-index: 1;
+	top: 32px;
+	/* top: calc(50vh - 29px); */
+	right: -12px;
+
+	width: 24px;
+	height: 24px;
+	color: rgba(0, 0, 0, 0.25);
+	background: white;
+	border-radius: 50%;
+	box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.1);
+	font-size: 18px;
+	line-height: 1;
+
+	&::after {
+		content: '<';
+	}
+
+	/* transform: rotate(360deg); */
+	/* transition: transform 0.2s; */
+
+	.collapsed & {
+		transform: rotate(180deg);
+	}
+}

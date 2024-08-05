@@ -1,0 +1,4 @@
+body {
+	/* 禁止滚动回弹 */
+	overscroll-behavior: none;
+}

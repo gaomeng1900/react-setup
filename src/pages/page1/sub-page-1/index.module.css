@@ -1,0 +1,25 @@
+.wrapper {
+	position: relative;
+	width: 100%;
+
+	.innerWrapper {
+		position: relative;
+		width: calc(100% - 32px);
+		margin: 16px;
+		padding: 16px;
+		border-radius: 6px;
+
+		background: #ffffff;
+	}
+
+	.innerWrapperTransparent {
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 110px);
+		overflow: hidden;
+	}
+
+	.breadcrumb {
+		margin: 16px;
+	}
+}
